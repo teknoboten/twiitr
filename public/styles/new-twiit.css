@@ -1,0 +1,43 @@
+button {
+  padding: .25em .5em;
+  margin: .5em 0;
+  font-family: 'Bungee', sans-serif;
+  background-color: #3D395D;
+  border: 0;
+  border-radius: 5px;
+  color: #FAE8EB;
+}
+
+button:hover {
+  background-color: #534e7e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+label {
+  display: none;
+}
+
+textarea {
+  min-width: 95%;
+  border: 0;
+  border-bottom: 5px solid #534e7e;
+  font-size: 1.5em;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  min-width: 95%;
+  align-items: flex-end;
+}
+
+form span {
+  font-family: 'Bungee', sans-serif;
+  margin: .5em 0;
+}

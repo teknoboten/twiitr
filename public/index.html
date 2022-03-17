@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-twiit.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,6 +31,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -59,7 +61,22 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <h3>Sea of Tranquility</h3>
+    <section class="new-twiit">
+      <!-- <h2>Compose Tweet</h2> -->
+      <form action="/tweets/" method="POST">
+        <label for="tweet-text">Add new Twiit</label>
+        <textarea name="text" id="tweet-text" placeholder="tell us every thought you think"></textarea>
+        <div>
+          <button type="submit">Twiit</button>
+          <!-- <output name="counter" class="counter" for="tweet-text">140</output> -->
+          <span id="counter">140</span>
+        </div>
+
+
+      </form>
+    </section>
+
+    <!-- <h3>Sea of Tranquility</h3>
     <p>invent the universe courage of our questions the carbon in our apple pies</p>
 
     <h3>extraordinary claims</h3>
@@ -70,7 +87,7 @@
     <p>A mote of dust suspended in a sunbeam circumnavigated rich in heavy atoms</p>
 
     <h3>pretty stories</h3>
-    <p>billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
+    <p>billions upon billions upon billions upon billions upon billions upon billions upon billions.</p> -->
 
   </main>
 </body>
