@@ -28,6 +28,8 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/8088247191.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -64,12 +66,12 @@
     <section class="new-twiit">
       <!-- <h2>Compose Tweet</h2> -->
       <form action="/tweets/" method="POST">
-        <label for="tweet-text">Add new Twiit</label>
-        <textarea name="text" id="tweet-text" placeholder="tell us every thought you think"></textarea>
+        <label for="twiit-text">Add new Twiit</label>
+        <textarea name="text" id="twiit-text" placeholder="tell us every thought you think"></textarea>
         <div>
           <button type="submit">Twiit</button>
-          <!-- <output name="counter" class="counter" for="tweet-text">140</output> -->
-          <span id="counter">140</span>
+          <!-- <output name="counter" class="counter" for="twiit-text">140</output> -->
+          <span id="counter">0</span>
         </div>
 
 
