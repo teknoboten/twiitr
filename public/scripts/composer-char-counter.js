@@ -1,18 +1,16 @@
 $(document).ready(function() {
 
-  $("#twiit-text").keydown(function(){
-    let count = this.value.length + 1;
+  $("#twiit-text").keyup(function() {
+    let count = this.value.length;
 
-    if (count > 140){
+    if (count > 140) {
       count -= 140;
       count = (0 - count);
-      $("#counter").text(count);
-      //add css class to change colour
-    } else {
-      $("#counter").text(this.value.length + 1);
-    }
-        
-  });
+      $("#counter").text(count).addClass("red");
 
+    } else {
+      $("#counter").text(this.value.length).removeClass("red");
+    }
+  });
 });
 

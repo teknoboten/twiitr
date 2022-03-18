@@ -41,3 +41,7 @@ form span {
   font-family: 'Bungee', sans-serif;
   margin: .5em 0;
 }
+
+.red {
+  color: red;
+}
