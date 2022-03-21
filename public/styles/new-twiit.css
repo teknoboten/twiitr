@@ -2,14 +2,15 @@ button {
   padding: .25em .5em;
   margin: .5em 0;
   font-family: 'Bungee', sans-serif;
-  background-color: #3D395D;
+  /* background-color: #3D395D; */
+  background: #d8d4c6;
   border: 0;
   border-radius: 5px;
-  color: #FAE8EB;
+  color: #f4f1ec;
 }
 
 button:hover {
-  background-color: #534e7e;
+  background-color: #f5b2d9;
 }
 
 form {
@@ -24,16 +25,18 @@ label {
 }
 
 textarea {
-  min-width: 95%;
+  width: 100%;
   border: 0;
-  border-bottom: 5px solid #534e7e;
+  border-bottom: 5px solid #d8d4c6;
   font-size: 1.5em;
 }
 
 form div {
   display: flex;
   justify-content: space-between;
-  min-width: 95%;
+  width: 100%;
+  padding: 2px;
+  /* border: 5px solid red; */
   align-items: flex-end;
 }
 

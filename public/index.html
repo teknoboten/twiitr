@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-twiit.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/twiits.css" type="text/css" />
+
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,19 +43,19 @@
   <nav>
     <span id="logo">twiitr</span>
 
+
     <div id="navbox">
 
       <span><b>Write</b> a new twiit</span>
-      <span><i class="fa-solid fa-angles-down"></i></span>
+      <i class="fa-solid fa-angles-down"></i>
     </div>
 
   </nav>
 
-  <header>
+  <header id="header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
-    <!-- <br> -->
     <div>
 
       <span id="name"><b>Alexis</b> Rose</span>
@@ -63,7 +65,8 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <section class="new-twiit">
+    <!-- <section class="new-twiit"> -->
+    <section>
       <!-- <h2>Compose Tweet</h2> -->
       <form action="/tweets/" method="POST">
         <label for="twiit-text">Add new Twiit</label>
@@ -73,23 +76,94 @@
           <!-- <output name="counter" class="counter" for="twiit-text">140</output> -->
           <span id="counter">0</span>
         </div>
-
-
       </form>
+
     </section>
 
-    <!-- <h3>Sea of Tranquility</h3>
-    <p>invent the universe courage of our questions the carbon in our apple pies</p>
+    <section>
 
-    <h3>extraordinary claims</h3>
-    <p>the seed of intelligence a very small stage in a vast cosmic arena a very small stage in a vast cosmic arena the
-      only home we've ever known.</p>
+      <!-- 
+        - each twiit is an article
+        - use header / footer tags -- more semantically useful
+        - add css classes AFTER html - use tag based selectors if possible
+        - use font awesome icons
+      -->
 
-    <h3>dream of the mind's eye</h3>
-    <p>A mote of dust suspended in a sunbeam circumnavigated rich in heavy atoms</p>
+      <article>
+        <header>
+          <div>
 
-    <h3>pretty stories</h3>
-    <p>billions upon billions upon billions upon billions upon billions upon billions upon billions.</p> -->
+            <img src="/images/profile-hex.png">
+            <span>Alexis Rose</span>
+
+          </div>
+
+          <div> <a href="#">@alittlebitalexis</a></div>
+        </header>
+
+        <div>
+          <p>I'm a Lamborghini, I'm a Hollywood star. I'm a little bit tipsy, when I drive my car</p>
+        </div>
+
+        <footer>
+          <div>
+            <a href="#">10 days ago</a>
+          </div>
+          <div>
+            <a href="#"><i class="fa-solid fa-flag"></i></a>
+            <a href="#"><i class="fa-solid fa-retweet"></i></a>
+            <a href="#"><i class="fa-solid fa-fire"></i></a>
+          </div>
+        </footer>
+
+      </article>
+
+
+
+      <article>
+        <header>
+          <div>
+
+            <img src="/images/profile-hex.png">
+            <span>Alexis Rose</span>
+
+          </div>
+
+          <div id="atUser"> <a href="#">@alittlebitalexis</a></div>
+        </header>
+
+        <div>
+          <p>
+          <p>I'm expensive sushi, I'm a cute huge yacht. I'm a little bit single, even when I'm not.</p>
+          </p>
+        </div>
+
+        <footer>
+          <div>
+            <a href="#">10 days ago</a>
+          </div>
+          <div>
+            <a href="#"><i class="fa-solid fa-flag"></i></a>
+            <a href="#"><i class="fa-solid fa-retweet"></i></a>
+            <a href="#"><i class="fa-solid fa-fire"></i></a>
+          </div>
+        </footer>
+
+      </article>
+
+
+
+
+
+
+    </section>
+
+    <!-- 
+
+   
+
+    <p>I'm a hieroglyphic, I'm an open book. I'm a little bit cray-cray if you steal my look.</p>
+    -->
 
   </main>
 </body>

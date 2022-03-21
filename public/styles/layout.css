@@ -30,3 +30,21 @@ main {
   background-color: #f4f1ec;
 }
 
+body a:link {
+  /* color: #545149; */
+  color: #a3a098;
+  text-decoration: none;
+} 
+
+body a:visited {
+  color: #a3a098;
+  text-decoration: none;
+}
+
+body a:hover {
+  color: #f5b2d9;
+}
+
+body i:hover {
+  color: #f5b2d9;
+}

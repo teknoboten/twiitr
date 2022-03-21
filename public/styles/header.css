@@ -1,4 +1,4 @@
-header {
+header#header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -21,3 +21,4 @@ header div {
 header img {
   max-width: 80%;
 }
+
