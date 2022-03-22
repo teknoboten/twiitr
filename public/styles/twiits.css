@@ -12,7 +12,7 @@ article {
 
 article:hover {
   border: 3px solid #d8d4c6;
-  box-shadow: 2px 5px #d8d4c6;
+  box-shadow: 3px 3px #d8d4c6;
   border-radius: 10px;
 }
 
