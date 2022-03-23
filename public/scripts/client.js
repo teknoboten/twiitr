@@ -1,15 +1,40 @@
 //fake tweet data
-  const tweetData = {
-    "user": {
-      "name": "Alexis Rose",
-      "avatars": "http://localhost:8080/images/profile-hex.png",
-        "handle": "@alittlebitalexis"
-      },
-    "content": {
-        "text": "I'm expensive sushi, I'm a cute huge yacht. I'm a little bit single, even when I'm not."
-      },
-    "created_at": 1461116232227
- }
+//   const tweetData = [
+//     {
+//     "user": {
+//       "name": "Alexis Rose",
+//       "avatars": "http://localhost:8080/images/profile-hex.png",
+//         "handle": "@alittlebitalexis"
+//       },
+//     "content": {
+//         "text": "I'm expensive sushi, I'm a cute huge yacht. I'm a little bit single, even when I'm not."
+//       },
+//     "created_at": 1647951611232
+//  },
+//  {
+//   "user": {
+//     "name": "Alexis Rose",
+//     "avatars": "http://localhost:8080/images/profile-hex.png",
+//       "handle": "@alittlebitalexis"
+//     },
+//   "content": {
+//       "text": "Hide your diamonds, hide your exes, I'm a little bit Alexis"
+//     },
+//   "created_at": 1647981611232
+// },
+// {
+//   "user": {
+//     "name": "Alexis Rose",
+//     "avatars": "http://localhost:8080/images/profile-hex.png",
+//       "handle": "@alittlebitalexis"
+//     },
+//   "content": {
+//       "text": "Hide your diamonds, hide your exes, I'm a little bit Alexis"
+//     },
+//   "created_at": 1647991614232
+// }
+
+  // ]
 
  const createTweetElement = (tweetData) => {
   const ago = timeago.format(tweetData.created_at);
@@ -45,13 +70,55 @@
   return element;
 }
 
-//document.ready() ensures the script does not run until the DOM is fully loaded
-$(() => {
+const renderTweets = (tweetData) => {
+  const $container = $('#tweetscontainer');
+  $container.empty();
 
-const $tweet = createTweetElement(tweetData);
-const container = $('#tweetscontainer');
-container.append($tweet);
+  for (const tweet in tweetData){
+    const $tweet = createTweetElement(tweetData[tweet]);
+    $container.append($tweet);
+  }
+
+};
+
+const loadTweets = () => {
+
+  //make a jquery GET request to /tweets
+  //it will handle a JSON response containing an array
+  $.ajax('/tweets').then((response) => {
+    // return response;
+
+
+
+
+
+
+
+    
+  })
+
+}
+
+$(() => {
+  // renderTweets(tweetData);
+  loadTweets();
+  
+  const $form = $('form');
+
+  $form.on("submit", function(event) {
+    event.preventDefault(); //when the form is submitted, prevent the page from reloading (default behaviour)
+        const serialized = $(this).serialize(); //.this === event.target
+
+    $.post('/tweets', serialized).then((response) => {  
+    // renderTweets(tweetData);
+      loadTweets();
+    })
+
+    // loadTweets();
+  })
+
 
 });
 
 
+//TIL 'shadow' is when you have two variables in different scopes with the same name... one is overwritten 
