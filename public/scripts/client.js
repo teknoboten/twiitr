@@ -1,42 +1,4 @@
-//fake tweet data
-//   const tweetData = [
-//     {
-//     "user": {
-//       "name": "Alexis Rose",
-//       "avatars": "http://localhost:8080/images/profile-hex.png",
-//         "handle": "@alittlebitalexis"
-//       },
-//     "content": {
-//         "text": "I'm expensive sushi, I'm a cute huge yacht. I'm a little bit single, even when I'm not."
-//       },
-//     "created_at": 1647951611232
-//  },
-//  {
-//   "user": {
-//     "name": "Alexis Rose",
-//     "avatars": "http://localhost:8080/images/profile-hex.png",
-//       "handle": "@alittlebitalexis"
-//     },
-//   "content": {
-//       "text": "Hide your diamonds, hide your exes, I'm a little bit Alexis"
-//     },
-//   "created_at": 1647981611232
-// },
-// {
-//   "user": {
-//     "name": "Alexis Rose",
-//     "avatars": "http://localhost:8080/images/profile-hex.png",
-//       "handle": "@alittlebitalexis"
-//     },
-//   "content": {
-//       "text": "Hide your diamonds, hide your exes, I'm a little bit Alexis"
-//     },
-//   "created_at": 1647991614232
-// }
-
-  // ]
-
- const createTweetElement = (tweetData) => {
+const createTweetElement = (tweetData) => {
   const ago = timeago.format(tweetData.created_at);
   const element = `
   <article>
@@ -68,57 +30,33 @@
 </article>
 `;
   return element;
-}
-
+};
 const renderTweets = (tweetData) => {
+
   const $container = $('#tweetscontainer');
   $container.empty();
 
-  for (const tweet in tweetData){
+  for (const tweet in tweetData) {
     const $tweet = createTweetElement(tweetData[tweet]);
     $container.append($tweet);
   }
-
+};
+const loadTweets = () => {
+  $.ajax('/tweets')
+    .then(function(response) {
+      renderTweets(response);
+    });
 };
 
-const loadTweets = () => {
-
-  //make a jquery GET request to /tweets
-  //it will handle a JSON response containing an array
-  $.ajax('/tweets').then((response) => {
-    // return response;
-
-
-
-
-
-
-
-    
-  })
-
-}
 
 $(() => {
-  // renderTweets(tweetData);
   loadTweets();
-  
   const $form = $('form');
 
+  //submit event handler
   $form.on("submit", function(event) {
-    event.preventDefault(); //when the form is submitted, prevent the page from reloading (default behaviour)
-        const serialized = $(this).serialize(); //.this === event.target
-
-    $.post('/tweets', serialized).then((response) => {  
-    // renderTweets(tweetData);
-      loadTweets();
-    })
-
-    // loadTweets();
-  })
-
-
+    event.preventDefault();                             //when the form is submitted, prevent the page from reloading (default behaviour)
+    const serialized = $(this).serialize();             //serialize .this === event.target (aka form data)
+    $.post('/tweets', serialized).then(loadTweets());
+  });
 });
-
-
-//TIL 'shadow' is when you have two variables in different scopes with the same name... one is overwritten 
