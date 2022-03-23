@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("#twiit-text").keyup(function() {
+  $("#tweet-text").keyup(function() {
     let count = this.value.length;
 
     if (count > 140) {
