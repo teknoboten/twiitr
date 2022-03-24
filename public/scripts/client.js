@@ -31,21 +31,41 @@ const createTweetElement = (tweetData) => {
 `;
   return element;
 };
+
 const renderTweets = (tweetData) => {
 
   const $container = $('#tweetscontainer');
   $container.empty();
 
+  const $textarea = $('#tweet-text');
+  $textarea.val('');
+
   for (const tweet in tweetData) {
     const $tweet = createTweetElement(tweetData[tweet]);
-    $container.append($tweet);
+    // $container.append($tweet);
+    $container.prepend($tweet);
   }
 };
+
 const loadTweets = () => {
-  $.ajax('/tweets')
-    .then(function(response) {
+
+    $.ajax('/tweets').then((response) => {
       renderTweets(response);
     });
+
+};
+
+const validateForm = () => {
+  const text = $("textarea#tweet-text").val();
+  
+  if (text === "") {
+    return "I can't post an empty twiit";
+  }
+
+  if (text.length > 140) {
+    return "Your twiit is too long";
+  }
+  return false;
 };
 
 
@@ -55,8 +75,15 @@ $(() => {
 
   //submit event handler
   $form.on("submit", function(event) {
-    event.preventDefault();                             //when the form is submitted, prevent the page from reloading (default behaviour)
-    const serialized = $(this).serialize();             //serialize .this === event.target (aka form data)
+    event.preventDefault();
+        
+    if (validateForm()) {
+      return alert(validateForm());
+    }
+    
+    const serialized = $(this).serialize();
+    
     $.post('/tweets', serialized).then(loadTweets());
   });
 });
+
