@@ -63,18 +63,36 @@ const loadTweets = () => {
 
 };
 
-const validateForm = () => {
-  const text = $("textarea#tweet-text").val();
-  
-  if (text === "") {
-    return "I can't post an empty twiit";
-  }
+const makeError = () => {
+  const $div = $('<div>').addClass('error');
+  return $div;
+}
 
-  if (text.length > 140) {
-    return "Your twiit is too long";
+const validateForm = (autoValidate = false) => {
+  const $text = $("textarea#tweet-text").val();
+  const $error = makeError();
+  const $section = $(".new-tweet");
+
+
+  $section.children('div').fadeOut(1, () => {
+    $(this).remove();
+  });
+
+  if ($text > 140){
+    $error.text("your twiit is too long bruh");
+    $section.prepend($error).fadeIn("slow");
+    return false;
+  };
+
+  if (!$text && !autoValidate){
+    // alert("blenk twiit!")
+    $error.text("can't post a blank twiit");
+    $section.prepend($error).fadeIn("slow");
+    return false;
   }
-  return false;
+  return true;
 };
+
 
 
 $(() => {
@@ -85,9 +103,10 @@ $(() => {
   $form.on("submit", function(event) {
     event.preventDefault();
         
-    if (validateForm()) {
-      return alert(validateForm());
-    }
+    validateForm();
+
+    //call validate form. if returns true, do nothing
+    //if returns false...???
     
     const serialized = $(this).serialize();
     
@@ -95,3 +114,21 @@ $(() => {
   });
 });
 
+
+
+
+
+// const validateForm = () => {
+//   const text = $("textarea#tweet-text").val();
+//   // const span = $("span#error");
+  
+//   if (text === "") {
+//     return "I can't post an empty twiit";
+//     // span.append(document.createTextNode("I can't post an empty twiit"))
+//   }
+
+//   if (text.length > 140) {
+//     return "Your twiit is too long";
+//   }
+//   return false;
+// };
