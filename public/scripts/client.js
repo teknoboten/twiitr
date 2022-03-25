@@ -64,33 +64,21 @@ const loadTweets = () => {
     });
 };
 
-// const makeError = () => {
-//   // const $div = $('<div>').addClass('error');
-//   const $div = $('<div>').addClass('error').fadeIn(3000);
-//   return $div;
-// }
-
 const validateForm = (autoValidate = false) => {
   const $text = $("textarea#tweet-text").val();
-  // const $error = makeError();
   const $error = $("div.hidden").hide();
   const $section = $(".new-tweet");
 
-  $section.children('div').fadeOut("slow", () => {
-    $(this).remove();
-  });
+  $section.children('div').fadeOut("slow", () => { $(this).remove()});
 
   if ($text.length > 140 && !autoValidate){
-    $error.text("your twiit is too long bruh");
-    // $section.prepend($error).fadeIn("slow");
+    $error.text("🌦️  Please distill your thoughts into a smaller, more concentrated twiit 🌦️").addClass("error").fadeIn("slow");
     $section.prepend($error);
     return false;
   };
 
   if (!$text && !autoValidate){
-    // $error.text("can't post a blank twiit");
-    $error.text("can't post a blank twiit").addClass("error").fadeIn("slow");
-    // $section.prepend($error).fadeIn("slow");
+    $error.text(" 💬  The Internet cannot run on empty twiits, please type something and try again 💬 ").addClass("error").fadeIn("slow");
     $section.prepend($error);
     return false;
   }
@@ -109,13 +97,7 @@ $(() => {
     if (validateForm()) {
       const serialized = $(this).serialize();
       $.post('/tweets', serialized).then(loadTweets());
-    } else {
-
-
-
-    }
-  
-    //probably should do something here
+    } 
 
   });
 });

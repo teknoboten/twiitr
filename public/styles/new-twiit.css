@@ -50,3 +50,18 @@ form span {
 .red {
   color: red;
 }
+
+.hidden {
+  display: none;
+}
+
+.error {
+  display: block;
+  background: rgb(252, 163, 163);
+  color: red; 
+  opacity: 0.5;
+  padding: .25em;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-bottom: .75em;
+}
