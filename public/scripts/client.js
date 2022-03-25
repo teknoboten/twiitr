@@ -43,6 +43,9 @@ const createTweetElement = (tweetData) => {
 
 const renderTweets = (tweetData) => {
 
+  const $counter = $("#counter");
+  $counter.text(0);
+
   const $container = $('#tweetscontainer');
   $container.empty();
 
@@ -56,42 +59,43 @@ const renderTweets = (tweetData) => {
 };
 
 const loadTweets = () => {
-
     $.ajax('/tweets').then((response) => {
       renderTweets(response);
     });
-
 };
 
-const makeError = () => {
-  const $div = $('<div>').addClass('error');
-  return $div;
-}
+// const makeError = () => {
+//   // const $div = $('<div>').addClass('error');
+//   const $div = $('<div>').addClass('error').fadeIn(3000);
+//   return $div;
+// }
 
 const validateForm = (autoValidate = false) => {
   const $text = $("textarea#tweet-text").val();
-  const $error = makeError();
+  // const $error = makeError();
+  const $error = $("div.hidden").hide();
   const $section = $(".new-tweet");
 
-  $section.children('div').fadeOut(1, () => {
+  $section.children('div').fadeOut("slow", () => {
     $(this).remove();
   });
 
   if ($text.length > 140 && !autoValidate){
     $error.text("your twiit is too long bruh");
-    $section.prepend($error).fadeIn("slow");
+    // $section.prepend($error).fadeIn("slow");
+    $section.prepend($error);
     return false;
   };
 
   if (!$text && !autoValidate){
-    // alert("blenk twiit!")
-    $error.text("can't post a blank twiit");
-    $section.prepend($error).fadeIn("slow");
+    // $error.text("can't post a blank twiit");
+    $error.text("can't post a blank twiit").addClass("error").fadeIn("slow");
+    // $section.prepend($error).fadeIn("slow");
+    $section.prepend($error);
     return false;
   }
   return true;
 };
-
 
 
 $(() => {
@@ -105,7 +109,11 @@ $(() => {
     if (validateForm()) {
       const serialized = $(this).serialize();
       $.post('/tweets', serialized).then(loadTweets());
-    } 
+    } else {
+
+
+
+    }
   
     //probably should do something here
 
