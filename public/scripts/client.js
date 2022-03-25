@@ -1,5 +1,14 @@
+const escapeText = (tweetData) => {
+  //tweetData.content.text
+  let p = document.createElement("p");
+  p.appendChild(document.createTextNode(tweetData.content.text));
+  return p.innerHTML;
+}
+
 const createTweetElement = (tweetData) => {
   const ago = timeago.format(tweetData.created_at);
+  const safeTweet = escapeText(tweetData);
+
   const element = `
   <article>
   <header>
@@ -13,7 +22,7 @@ const createTweetElement = (tweetData) => {
   </header>
 
   <div>
-    <p>${tweetData.content.text}</p>
+    ${safeTweet}
   </div>
 
   <footer>
@@ -42,7 +51,6 @@ const renderTweets = (tweetData) => {
 
   for (const tweet in tweetData) {
     const $tweet = createTweetElement(tweetData[tweet]);
-    // $container.append($tweet);
     $container.prepend($tweet);
   }
 };
