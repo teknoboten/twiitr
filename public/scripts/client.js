@@ -73,12 +73,11 @@ const validateForm = (autoValidate = false) => {
   const $error = makeError();
   const $section = $(".new-tweet");
 
-
   $section.children('div').fadeOut(1, () => {
     $(this).remove();
   });
 
-  if ($text > 140){
+  if ($text.length > 140 && !autoValidate){
     $error.text("your twiit is too long bruh");
     $section.prepend($error).fadeIn("slow");
     return false;
@@ -102,15 +101,14 @@ $(() => {
   //submit event handler
   $form.on("submit", function(event) {
     event.preventDefault();
-        
-    validateForm();
+    
+    if (validateForm()) {
+      const serialized = $(this).serialize();
+      $.post('/tweets', serialized).then(loadTweets());
+    } 
+  
+    //probably should do something here
 
-    //call validate form. if returns true, do nothing
-    //if returns false...???
-    
-    const serialized = $(this).serialize();
-    
-    $.post('/tweets', serialized).then(loadTweets());
   });
 });
 
