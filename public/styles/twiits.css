@@ -1,68 +1,49 @@
-article {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+article.twiit {
   max-width: 100%;
-  margin-top: 1.75em;
-  font-size: 1.6em;
+  margin-top: 3vh;
   border: 3px solid #84BCDA;
   border-radius: 10px;
+  background-color: #ffffff;
 }
 
 article:hover {
-  border: 3px solid #84BCDA;
   box-shadow: 3px 3px #067BC2;
   border-radius: 10px;
 }
 
-article header {
+article.twiit header {
   display: flex;
   justify-content: space-between;
-  font-weight: 500;
-  padding: 10px 10px;
-}
-
-article header a:link, article header a:visited {
-  color: #84BCDA;
-}
-
-article header a:hover {
-  color: #04436A;
-}
-
-article img {
-  max-width: 3em;
-  margin-right: .25em;
-}
-
-article div {
-  display: flex;
   align-items: center;
-  padding: 0px 5px;
+  font-weight: 500;
+  padding: 5px;
+  padding-top: 20px;
 }
 
-article p {
-  margin-bottom: .2em;
-  padding-left: .2em;
+article.twiit header div {
+  align-items: center;
+  margin: 0px 10px;
 }
 
-article span:hover {
-  color: #067BC2;
+article.twiit header img {
+  max-width: 40px;
 }
 
-article footer {
+div#twiit {
+  max-width: 98%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+}
+
+article.twiit footer {
   display: flex;
-  padding: 0em 2.5em 1em;
   justify-content: space-between;
-  font-size: .5em;
+  max-width: 98%;
+  margin: 0 auto;
+  font-size: .75em;
   font-weight: 600;
+  padding: 8px;
   }
-
-article i {
-  margin: 2px;
-  color: #84BCDA;
-}
-
-article i:hover {
-  color: #067BC2;
-}

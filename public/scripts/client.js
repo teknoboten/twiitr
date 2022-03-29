@@ -10,18 +10,18 @@ const createTweetElement = (tweetData) => {
   const safeTweet = escapeText(tweetData);
 
   const element = `
-  <article>
+  <article class="twiit">
   <header>
     <div>
       <img src="${tweetData.user.avatars}">
-      <span>${tweetData.user.name}</span>
+      <div>${tweetData.user.name}</div>
 
     </div>
 
     <div> <a href="#">${tweetData.user.handle}</a></div>
   </header>
 
-  <div>
+  <div id="twiit">
     ${safeTweet}
   </div>
 
@@ -72,13 +72,13 @@ const validateForm = (autoValidate = false) => {
   $section.children('div').fadeOut("slow", () => { $(this).remove()});
 
   if ($text.length > 140 && !autoValidate){
-    $error.text("🌦️  Please distill your thoughts into a smaller, more concentrated twiit 🌦️").addClass("error").fadeIn("slow");
+    $error.text("Your twiit is too large!").addClass("error").fadeIn("slow");
     $section.prepend($error);
     return false;
   };
 
   if (!$text && !autoValidate){
-    $error.text(" 💬  The Internet cannot run on empty twiits, please type something and try again 💬 ").addClass("error").fadeIn("slow");
+    $error.text(`I can't post an empty twiit!`).addClass("error").fadeIn("slow");
     $section.prepend($error);
     return false;
   }
@@ -120,3 +120,36 @@ $(() => {
 //   }
 //   return false;
 // };
+
+
+
+
+// const element = `
+//   <article>
+//   <header>
+//     <div>
+//       <img src="${tweetData.user.avatars}">
+//       <span>${tweetData.user.name}</span>
+
+//     </div>
+
+//     <div> <a href="#">${tweetData.user.handle}</a></div>
+//   </header>
+
+//   <div>
+//     ${safeTweet}
+//   </div>
+
+//   <footer>
+//     <div>
+//       <a href="#">${ago}</a>
+//     </div>
+//     <div>
+//       <a href="#"><i class="fa-solid fa-flag"></i></a>
+//       <a href="#"><i class="fa-solid fa-retweet"></i></a>
+//       <a href="#"><i class="fa-solid fa-fire"></i></a>
+//     </div>
+//   </footer>
+
+// </article>
+// `;

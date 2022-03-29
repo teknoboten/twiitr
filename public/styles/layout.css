@@ -16,9 +16,10 @@ html {
 
 body {
   color: #000000;
-  background-color: #ffffff;
+  background-color: #f7f5f5;
   font-size: 100%;
   font-family: 'Source Sans Pro', sans-serif;
+  
 }
 
 /*
@@ -27,24 +28,18 @@ body {
 
 main {
   margin: 5%;
-  background-color: #ffffff;
+  background-color: #f7f5f5;
 }
 
 body a:link, a:visited {
-  /* color: #545149; */
   color: #84BCDA;
   text-decoration: none;
 } 
-
-/* body a:visited {
-  color: #84BCDA;
-  text-decoration: none;
-} */
 
 body a:hover {
   color: #04436A;
 }
 
 body i:hover {
-  color: #84BCDA;
+  color: #04436A;
 }
