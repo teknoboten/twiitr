@@ -6,11 +6,9 @@ nav {
   z-index: 1;
   width: 100%;
   top: 0;
-  /* height: 120px; */
   height: 80px;
-  /* background-color: #3D395D; */
-  background-color: #665a66;
-  color: #FAE8EB;
+  background-color: #04436A;
+  color: #ffffff;
   padding: 1.5em;
 }
 
@@ -28,14 +26,13 @@ nav {
 }
 
 span:hover {
-  color: #E4C2C6;
+  color: #FFD000;
 }
 
-
 nav i {
-  color: #FAE8EB
+  color: #F37748
 }
 
 nav i:hover {
-  color: #E4C2C6;
+  color: #FFD000;
 }

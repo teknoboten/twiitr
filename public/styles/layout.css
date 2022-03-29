@@ -15,8 +15,8 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #000000;
+  background-color: #ffffff;
   font-size: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -27,24 +27,24 @@ body {
 
 main {
   margin: 5%;
-  background-color: #f4f1ec;
+  background-color: #ffffff;
 }
 
-body a:link {
+body a:link, a:visited {
   /* color: #545149; */
-  color: #a3a098;
+  color: #84BCDA;
   text-decoration: none;
 } 
 
-body a:visited {
-  color: #a3a098;
+/* body a:visited {
+  color: #84BCDA;
   text-decoration: none;
-}
+} */
 
 body a:hover {
-  color: #f5b2d9;
+  color: #04436A;
 }
 
 body i:hover {
-  color: #f5b2d9;
+  color: #84BCDA;
 }

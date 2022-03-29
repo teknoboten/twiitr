@@ -2,14 +2,14 @@ button {
   padding: .25em .5em;
   margin: .5em 0;
   font-family: 'Bungee', sans-serif;
-  background: #665a66;
+  background: #F37748;
   border: 0;
   border-radius: 5px;
-  color: #f4f1ec;
+  color: #ffffff;
 }
 
 button:hover {
-  background-color: #f5b2d9;
+  background-color: #067BC2;
 }
 
 form {
@@ -26,7 +26,7 @@ label {
 textarea {
   width: 100%;
   border: 0;
-  border-bottom: 5px solid #d8d4c6;
+  border-bottom: 5px solid #84BCDA;
   font-size: 1.5em;
 }
 
@@ -45,10 +45,11 @@ form div {
 form span {
   font-family: 'Bungee', sans-serif;
   margin: .5em 0;
+  color: #04436A;
 }
 
 .red {
-  color: red;
+  color: #F46197;
 }
 
 .hidden {
@@ -57,11 +58,11 @@ form span {
 
 .error {
   display: block;
-  background: rgb(252, 163, 163);
-  color: red; 
-  opacity: 0.5;
+  background: #F37748;
+  color: #ffffff; 
+  opacity: 0.8;
   padding: .25em;
-  border: 1px solid red;
+  border: 1px solid #F37748;
   border-radius: 5px;
   margin-bottom: .75em;
 }
