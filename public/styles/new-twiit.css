@@ -1,15 +1,15 @@
-button {
+button, button:visited {
   padding: .25em .5em;
   margin: .5em 0;
   font-family: 'Bungee', sans-serif;
-  background: #F37748;
+  background: #F0057A;
   border: 0;
   border-radius: 5px;
   color: #ffffff;
 }
 
-button:hover button:visited {
-  background-color: #067BC2;
+button:hover {
+  background-color: #7A6A5B;
   border: none;
 }
 
@@ -18,7 +18,7 @@ form {
   flex-direction: column;
   align-items: center;
   /* width: 100%; */
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
 }
 
 label {
@@ -28,7 +28,7 @@ label {
 textarea {
   width: 100%;
   border: 0;
-  border-bottom: 5px solid #84BCDA;
+  border-bottom: 5px solid #E0E6DA;
   font-size: 1.5em;
 }
 
@@ -47,11 +47,11 @@ form div {
 form span {
   font-family: 'Bungee', sans-serif;
   margin: .5em 0;
-  color: #04436A;
+  color: #C2C4BF;
 }
 
 .red {
-  color: #F46197;
+  color: #F0057A;
 }
 
 .hidden {
@@ -60,11 +60,11 @@ form span {
 
 .error {
   display: block;
-  background: #F37748;
+  background: #F0057A;
   color: #ffffff; 
   opacity: 0.8;
   padding: .25em;
-  border: 1px solid #F37748;
+  border: 1px solid #F0057A;
   border-radius: 5px;
   margin-bottom: .75em;
 }

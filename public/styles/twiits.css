@@ -1,13 +1,13 @@
 article.twiit {
   max-width: 100%;
   margin-top: 3vh;
-  border: 3px solid #84BCDA;
+  border: 3px solid #E0E6DA;
   border-radius: 10px;
   background-color: #ffffff;
 }
 
 article:hover {
-  box-shadow: 3px 3px #067BC2;
+  box-shadow: 3px 3px #E0E6DA;
   border-radius: 10px;
 }
 

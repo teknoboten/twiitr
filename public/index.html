@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>twiitr</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -43,54 +44,57 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
-  <nav>
-    <span id="logo">twiitr</span>
+
+  <container id="content">
+    <!-- Top nav bar (fixed) -->
+    <nav class="nav">
+      <span id="logo">twiitr</span>
 
 
-    <div id="navbox">
+      <div id="navbox">
 
-      <span><b>Write</b> a new twiit</span>
-      <i class="fa-solid fa-angles-down"></i>
-    </div>
-
-  </nav>
-
-  <header id="header">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <div>
-
-      <span id="name"><b>Alexis</b> Rose</span>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-
-
-      <div class="hidden">
+        <span><b>Write</b> a new twiit</span>
+        <i class="fa-solid fa-angles-down"></i>
       </div>
 
-      <form action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder="What's twiitin?"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <span id="counter">0</span>
+    </nav>
+
+    <header class="header">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <div>
+
+        <span id="name"><b>Alexis</b> Rose</span>
+      </div>
+    </header>
+
+    <!-- Page-specific (main) content here -->
+    <main class="main">
+      <section class="new-tweet">
+
+
+        <div class="hidden">
         </div>
-      </form>
-    </section>
+
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text" placeholder="What's twiitin?"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <span id="counter">0</span>
+          </div>
+        </form>
+      </section>
 
 
 
-    <section id="tweetscontainer" />
+      <section id="tweetscontainer" />
 
 
 
-  </main>
+    </main>
+  </container>
 </body>
 
 

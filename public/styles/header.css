@@ -4,8 +4,8 @@
   justify-content: space-evenly;
   align-items: center;
   /* height: 10em; */
-  background-color: #067bc2;
-  background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
+  background-color: #7A6A5B;
+  background-image: url('https://www.transparenttextures.com/patterns/subtle-carbon.png ');
   color: #FFFFFF;
   
   /* font-size: 1.7em;
@@ -22,6 +22,6 @@ header div {
 } */
 
 header span:hover {
-  color: #84bcda;
+  color: #C2C4BF;
 }
 

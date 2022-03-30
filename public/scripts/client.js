@@ -21,7 +21,7 @@ const createTweetElement = (tweetData) => {
     <div> <a href="#">${tweetData.user.handle}</a></div>
   </header>
 
-  <div id="twiit">
+  <div class="twiit">
     ${safeTweet}
   </div>
 

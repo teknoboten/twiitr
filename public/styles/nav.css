@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  /* background-color: #04436A; */
+  background-color: #292623;
   color: #ffffff;
   font-size: 28px; 
 }
@@ -14,7 +14,6 @@
 
 #logo {
   font-family: 'Bungee', sans-serif;
-  /* font-size: 2em; */
   font-size: 1.4em;
 }
 
@@ -25,16 +24,15 @@
   align-items: center;
 }
 
-span:hover {
-  color: #067BC2;
+span:hover, nav i:hover {
+  color: #C2C4BF;
 }
 
 nav i {
-  color: #F37748;
+  color: #F0057A;
   font-size: .5em;
-  
 }
 
-nav i:hover {
-  color: #067BC2;
-}
+/* nav i:hover {
+  color: #C2C4BF;
+} */
