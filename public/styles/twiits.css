@@ -29,13 +29,14 @@ article.twiit header img {
   max-width: 40px;
 }
 
-div#twiit {
+div.twiit {
   max-width: 98%;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
   font-size: 1.5em;
+  overflow-wrap: break-word;
 }
 
 article.twiit footer {

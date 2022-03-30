@@ -8,15 +8,17 @@ button {
   color: #ffffff;
 }
 
-button:hover {
+button:hover button:visited {
   background-color: #067BC2;
+  border: none;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
+  margin-top: 2vh;
 }
 
 label {

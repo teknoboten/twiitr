@@ -1,17 +1,15 @@
-header#header {
+.header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 80px;
-  height: 10em;
-  background-color: #067BC2;
-  /* background-image: url('https://www.transparenttextures.com/patterns/iron-grip.png'); */
+  /* height: 10em; */
+  background-color: #067bc2;
   background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
-  
   color: #FFFFFF;
-  font-size: 1.7em;
-  font-weight: 400;
+  
+  /* font-size: 1.7em;
+  font-weight: 400; */
 }
 
 header div {
@@ -19,7 +17,11 @@ header div {
   justify-content: center;
 }
 
-header img {
+/* header img {
   max-width: 80%;
+} */
+
+header span:hover {
+  color: #84bcda;
 }
 

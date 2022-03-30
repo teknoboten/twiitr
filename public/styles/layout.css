@@ -10,36 +10,134 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
-body {
-  color: #000000;
-  background-color: #f7f5f5;
-  font-size: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
-  
-}
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-main {
-  margin: 5%;
-  background-color: #f7f5f5;
-}
+/* Global colors */
 
 body a:link, a:visited {
   color: #84BCDA;
   text-decoration: none;
 } 
 
-body a:hover {
+body a:hover, i:hover {
   color: #04436A;
 }
 
-body i:hover {
-  color: #04436A;
+body {
+  font-family: 'Source Sans Pro', sans-serif;
 }
+
+/* Global layout stuff */
+
+/* Baseline Style */
+
+.nav {
+  width: 100%;
+  height: 6vh;
+  z-index: 1;
+  top: 0;
+  padding: 1vw;
+  background-color: #067bc2;
+  background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
+}
+
+/* .nav span {
+  display: none;
+} */
+
+
+/* .nav i {
+  margin-right: 2vh;
+} */
+
+#content {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.header {
+  width: 100vw;
+  max-height: 22vh;
+  font-size: 1.2em;
+  margin-top: 6vh;;
+}
+
+.header img {
+  max-width: 11vh;
+}
+
+.main {
+  width: 98%;
+  margin: 1px auto;
+  margin-top: 1vh;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    height: 10vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    background-color: #04436A;
+    background-image: none;
+  }
+
+  .nav span {
+    display: inline;
+  }
+
+  .header {
+    width: 30vw;
+    min-height: 30vh;
+    margin-left: 2vw;
+    margin-right: auto;
+    margin-top: 13vh;
+    position: fixed;
+  }
+
+.header img {
+  max-width: 18vh;
+}
+
+  .main {
+    width: 60vw;
+    margin-right: 2vw;
+    margin-top: 13vh;
+  }
+
+}
+
+
+/* 
+div#twiit {
+  max-width: 98%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+} */
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+/* body {
+  color: #000000;
+  background-color: #f7f5f5;
+  font-size: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+  margin: 5%;
+  background-color: #f7f5f5;
+} */
+
+
