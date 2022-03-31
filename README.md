@@ -26,11 +26,11 @@ Twiitr is a simple, responsive, single-page Twitter clone.
 
 ## Screenshots
 
-**Desktop View**
+### Desktop View 
 !["Desktop"](https://github.com/teknoboten/twiitr/blob/main/docs/twiitrbig.png)
 
-**Mobile friendly** 
+### Mobile friendly
 !["Mobile"](https://github.com/teknoboten/twiitr/blob/main/docs/twiitrmobile.png)
 
-**Character Counter** 
+## Character Counter** 
 !["Counter"](https://github.com/teknoboten/twiitr/blob/main/docs/twiitrcounter.png)
