@@ -1,15 +1,12 @@
 $(document).ready(function() {
 
   $("#tweet-text").keyup(function() {
-    let count = this.value.length;
+    let charLeft = 140 - this.value.length;
 
-    if (count > 140) {
-      count -= 140;
-      count = (0 - count);
-      $("#counter").text(count).addClass("red");
-
+    if (charLeft < 1) {
+      $("#counter").text(charLeft).addClass("red");
     } else {
-      $("#counter").text(this.value.length).removeClass("red");
+      $("#counter").text(charLeft).removeClass("red");
     }
   });
 });

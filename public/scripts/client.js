@@ -10,7 +10,7 @@ const createTweetElement = (tweetData) => {
   const safeTweet = escapeText(tweetData);
 
   const element = `
-  <article class="twiit">
+  <article>
   <header>
     <div>
       <img src="${tweetData.user.avatars}">
@@ -21,7 +21,7 @@ const createTweetElement = (tweetData) => {
     <div> <a href="#">${tweetData.user.handle}</a></div>
   </header>
 
-  <div class="twiit">
+  <div class="twiitbody">
     ${safeTweet}
   </div>
 
@@ -44,7 +44,7 @@ const createTweetElement = (tweetData) => {
 const renderTweets = (tweetData) => {
 
   const $counter = $("#counter");
-  $counter.text(0);
+  $counter.text(140);
 
   const $container = $('#tweetscontainer');
   $container.empty();
@@ -58,10 +58,12 @@ const renderTweets = (tweetData) => {
   }
 };
 
+
 const loadTweets = () => {
-    $.ajax('/tweets').then((response) => {
-      renderTweets(response);
-    });
+  $.ajax('/tweets').then((response) => {
+    console.log(response);
+    renderTweets(response);
+  })
 };
 
 const validateForm = (autoValidate = false) => {
@@ -85,15 +87,24 @@ const validateForm = (autoValidate = false) => {
   return true;
 };
 
+const bounceIcon = () => {
+  $('.fa-angles-down').hover(
+    function(){ $(this).addClass('fa-bounce') },
+    function(){ $(this).removeClass('fa-bounce') }
+  );
+}
+
 
 $(() => {
+
+  bounceIcon();
   loadTweets();
   const $form = $('form');
 
   //submit event handler
   $form.on("submit", function(event) {
     event.preventDefault();
-    
+
     if (validateForm()) {
       const serialized = $(this).serialize();
       $.post('/tweets', serialized).then(loadTweets());
@@ -106,50 +117,4 @@ $(() => {
 
 
 
-// const validateForm = () => {
-//   const text = $("textarea#tweet-text").val();
-//   // const span = $("span#error");
-  
-//   if (text === "") {
-//     return "I can't post an empty twiit";
-//     // span.append(document.createTextNode("I can't post an empty twiit"))
-//   }
 
-//   if (text.length > 140) {
-//     return "Your twiit is too long";
-//   }
-//   return false;
-// };
-
-
-
-
-// const element = `
-//   <article>
-//   <header>
-//     <div>
-//       <img src="${tweetData.user.avatars}">
-//       <span>${tweetData.user.name}</span>
-
-//     </div>
-
-//     <div> <a href="#">${tweetData.user.handle}</a></div>
-//   </header>
-
-//   <div>
-//     ${safeTweet}
-//   </div>
-
-//   <footer>
-//     <div>
-//       <a href="#">${ago}</a>
-//     </div>
-//     <div>
-//       <a href="#"><i class="fa-solid fa-flag"></i></a>
-//       <a href="#"><i class="fa-solid fa-retweet"></i></a>
-//       <a href="#"><i class="fa-solid fa-fire"></i></a>
-//     </div>
-//   </footer>
-
-// </article>
-// `;

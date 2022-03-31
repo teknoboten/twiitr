@@ -14,27 +14,35 @@ html {
 /******  Global styles ******/
 
 body a:link, a:visited {
-  color: #F0057A;
+  color: #C2C4BF;
   text-decoration: none;
 } 
 
-body a:hover, i:hover {
-  color: #7A6A5B;
+a:hover, i:hover {
+  color: #F0057A;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+:focus-visible {
+  outline: #E0E6DA solid 2px;
+}
+
 
 /******  Baseline Layout  ******/
 
 .nav {
-  width: 100%;
+  width: 100vw;
   height: 7vh;
   z-index: 1;
   top: 0;
-  padding: 1vw;
+  padding: 1.5em;
+}
+
+.nav span.new-twiit {
+  display: none;  
 }
 
 #content {
@@ -47,9 +55,10 @@ body {
 }
 
 .main {
-  width: 98%;
+  width: 90%;
   margin: 1px auto;
   margin-top: 7vh;
+  /* border: 3px solid blueviolet;  */
 }
 
 
@@ -58,18 +67,18 @@ body {
 @media (min-width: 1024px) {
   .nav {
     height: 10vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    /* padding-left: 2vw;
+    padding-right: 2vw; */
   }
 
-  .nav span {
+  .nav span.new-twiit  {
     display: inline;
   }
 
   .header {
     display: block;
     width: 30vw;
-    min-height: 30vh;
+    min-height: 30vh; 
     margin-left: 2vw;
     margin-right: auto;
     margin-top: 13vh;

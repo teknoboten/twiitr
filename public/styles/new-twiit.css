@@ -4,6 +4,7 @@ button, button:visited {
   font-family: 'Bungee', sans-serif;
   background: #F0057A;
   border: 0;
+  outline: none;
   border-radius: 5px;
   color: #ffffff;
 }
@@ -14,11 +15,7 @@ button:hover {
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* width: 100%; */
-  /* margin-top: 2vh; */
+  margin-top: 1.5em;
 }
 
 label {
@@ -47,7 +44,7 @@ form div {
 form span {
   font-family: 'Bungee', sans-serif;
   margin: .5em 0;
-  color: #C2C4BF;
+  color: #7A6A5B;
 }
 
 .red {

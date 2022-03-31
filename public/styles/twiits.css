@@ -1,4 +1,4 @@
-article.twiit {
+article {
   max-width: 100%;
   margin-top: 3vh;
   border: 3px solid #E0E6DA;
@@ -11,25 +11,26 @@ article:hover {
   border-radius: 10px;
 }
 
-article.twiit header {
-  display: flex;
+article header {
+  display: flex;  
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
-  padding: 5px;
-  padding-top: 20px;
+  padding-top: 2vh;
+  /* border: 5px solid yellow; */
 }
 
-article.twiit header div {
+article header div {
   align-items: center;
   margin: 0px 10px;
 }
 
-article.twiit header img {
+article header img {
   max-width: 40px;
 }
 
-div.twiit {
+
+div.twiitbody {
   max-width: 98%;
   margin-top: 10px;
   margin-left: auto;
@@ -39,7 +40,7 @@ div.twiit {
   overflow-wrap: break-word;
 }
 
-article.twiit footer {
+article footer {
   display: flex;
   justify-content: space-between;
   max-width: 98%;
@@ -47,4 +48,4 @@ article.twiit footer {
   font-size: .75em;
   font-weight: 600;
   padding: 8px;
-  }
+}
