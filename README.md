@@ -23,3 +23,8 @@ Twiitr is a simple, responsive, single-page Twitter clone.
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Desktop"](https://github.com/teknoboten/twiitr/blob/main/docs/twiitrbig.png)
+!["Mobile"](https://github.com/teknoboten/twiitr/blob/main/docs/twiitrmobile.jpg)
